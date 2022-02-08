@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+</head>
+<body>
+  <section class="section">
+  <form th:object="${dept}" method="post">
+	  <ul th:if="${#fields.hasErrors('global')}">
+	    <li th:each="error: ${#fields.errors('global')}" th:text="${error}">Input is incorrect</li>
+	  </ul>
+	  <ul th:if="${#fields.hasErrors('*')}">
+	    <li th:each="error: ${#fields.errors('*')}" th:text="${error}"></li>
+	  </ul>
+    <input type="hidden" name="" value="" >
+	  <div class="field">
+	   <label class="label" for="name">name: </label>
+	   <div class="control"><input class="input" type="text" th:field="*{name}" /></div>
+	  </div>
+	  <div class="field">
+	   <label class="label" for="order">order: </label>
+	   <div class="control"><input class="input" type="text" th:field="*{order}" /></div>
+	   </div>
+    <div class="field">
+    <label class="label" for="time">time: </label>
+    <div class="control"><input class="input" type="text" th:field="*{time}" /></div>
+    </div>
+	  <div class="field">
+	   <div class="control"><button class="button" type="submit">save</button></div>
+	 </div>
+  </form>
+  </section>
+</body>
+</html>

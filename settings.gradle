@@ -1,0 +1,3 @@
+rootProject.name = 'thrthn'
+// This allows Tomcat to find the native libs 
+//org.gradle.jvmargs=-Djava.library.path=/usr/lib/tcnative

@@ -1,0 +1,69 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.2.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+	id 'war'
+}
+
+group = 'us.jyni'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+	google()
+  jcenter()
+	maven { url "https://repo1.maven.org/maven2/" }
+}
+
+dependencies {
+  
+  annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+  implementation 'org.springframework.boot:spring-boot-starter-cache'
+  implementation 'org.springframework.boot:spring-boot-starter-batch'
+  implementation 'org.springframework.boot:spring-boot-starter-quartz'
+//  implementation 'org.springframework:spring-mock'
+  implementation 'org.datavec:datavec-api:1.0.0-beta7'
+//  implementation 'org.deeplearning4j:deeplearning4j-core'
+//  implementation 'org.datavec:datavec-api'
+//  implementation 'org.datavec:datavec-api'
+//  implementation 'org.datavec:datavec-api'
+
+  runtimeOnly 'mysql:mysql-connector-java'
+  implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+  implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+  
+  providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+  implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+  implementation 'org.springframework.boot:spring-boot-starter-validation'
+  implementation 'javax.servlet:javax.servlet-api:3.1.0'
+  implementation 'javax.servlet.jsp:jsp-api:2.2'
+  implementation 'javax.servlet:jstl'
+
+  implementation 'org.springframework.boot:spring-boot-starter-security'
+	
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+  developmentOnly 'org.codehaus.janino:janino'
+
+	implementation 'org.springframework:spring-test'
+  testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	testImplementation 'org.springframework.batch:spring-batch-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+}
+
+test {
+	useJUnitPlatform()
+}
