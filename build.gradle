@@ -1,8 +1,8 @@
 plugins {
-	id 'org.springframework.boot' version '2.3.2.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'org.springframework.boot' version '2.6.3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'org.asciidoctor.convert' version '1.5.8'
 	id 'java'
-	id 'war'
 }
 
 group = 'us.jyni'
@@ -17,53 +17,52 @@ configurations {
 
 repositories {
 	mavenCentral()
-	google()
-  jcenter()
-	maven { url "https://repo1.maven.org/maven2/" }
+}
+
+ext {
+	set('snippetsDir', file("build/generated-snippets"))
+	set('springBootAdminVersion', "2.6.2")
 }
 
 dependencies {
-  
-  annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
-
-  implementation 'org.springframework.boot:spring-boot-starter-cache'
-  implementation 'org.springframework.boot:spring-boot-starter-batch'
-  implementation 'org.springframework.boot:spring-boot-starter-quartz'
-//  implementation 'org.springframework:spring-mock'
-  implementation 'org.datavec:datavec-api:1.0.0-beta7'
-//  implementation 'org.deeplearning4j:deeplearning4j-core'
-//  implementation 'org.datavec:datavec-api'
-//  implementation 'org.datavec:datavec-api'
-//  implementation 'org.datavec:datavec-api'
-
-  runtimeOnly 'mysql:mysql-connector-java'
-  implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
-  implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-  
-  providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
-  implementation 'org.springframework.boot:spring-boot-starter-web'
-  implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-  implementation 'org.springframework.boot:spring-boot-starter-validation'
-  implementation 'javax.servlet:javax.servlet-api:3.1.0'
-  implementation 'javax.servlet.jsp:jsp-api:2.2'
-  implementation 'javax.servlet:jstl'
-
-  implementation 'org.springframework.boot:spring-boot-starter-security'
-	
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
-	
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-  developmentOnly 'org.codehaus.janino:janino'
-
+	//implementation project('frame');
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-batch'
+	implementation 'org.springframework.boot:spring-boot-starter-cache'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+	implementation 'org.springframework.boot:spring-boot-starter-quartz'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'de.codecentric:spring-boot-admin-starter-client'
+	implementation 'de.codecentric:spring-boot-admin-starter-server'
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
 	implementation 'org.springframework:spring-test'
-  testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'mysql:mysql-connector-java'
+	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.batch:spring-batch-test'
+	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
 	testImplementation 'org.springframework.security:spring-security-test'
 }
 
-test {
+dependencyManagement {
+	imports {
+		mavenBom "de.codecentric:spring-boot-admin-dependencies:${springBootAdminVersion}"
+	}
+}
+
+tasks.named('test') {
+	outputs.dir snippetsDir
 	useJUnitPlatform()
+}
+
+tasks.named('asciidoctor') {
+	inputs.dir snippetsDir
+	dependsOn test
 }

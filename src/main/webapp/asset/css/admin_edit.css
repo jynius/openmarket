@@ -1,0 +1,131 @@
+@import url("admin_base.css");
+@import url("admin_layout.css");
+@import url("admin_popup.css");
+
+div.listbuttons {
+	margin:8px 2px;
+	text-align:right;
+}
+
+table.editwrap {
+	margin-top:8px;
+}
+
+/* in editwrap */
+table.editwrap th{
+	border: 1px solid #aaaaaa;
+	padding:5px 0 5px 15px; 
+	background-color:#e7e9ea; 
+	color:#333; 
+	text-align:left; 
+	border-right:1px solid #d3d3d3;
+}
+
+table.editwrap td {
+	border: 1px solid #aaaaaa;
+	padding: 4px 16px;
+}
+
+
+table.editwrap td div.wrap {
+	padding: 1px 2px; margin:1px 2px;
+}
+
+table.editwrap td div.wrap label {
+	width: 32px;
+	text-align:right;
+}
+
+table.editwrap label.error {
+	padding-left: 4px;
+	color: red;
+}
+
+table.editwrap input {
+	height: 16px;
+	padding: 1px;
+	border:1px solid #aaaaaa;
+	background:#ececec;
+}
+
+table.editwrap input.number {
+	width: 64px;
+	padding-right:3px;
+	text-align: right;
+}
+
+table.editwrap input.smallint {
+	width: 30px;
+	text-align: right;
+}
+
+table.editwrap input.email {
+	width: 250px;
+}
+
+table.editwrap input.url {
+	width: 80%;
+}
+
+table.editwrap input.date {
+	width: 78px;
+}
+
+table.editwrap input.title {
+	width: 96%;
+}
+
+table.editwrap input.location {
+	width: 32%; margin:2px 0px;
+}
+
+table.editwrap input.address {
+	width: 64%; margin:2px 0px;
+}
+
+table.editwrap textarea {
+	width:96.4%; height: 160px;
+	padding:2px; margin:2px 0px;
+}
+
+table.editwrap textarea.brief {
+	height: 40px;
+}
+
+p.imageguide {
+	color:#888888;
+}
+
+p.imageguide span.sizeword {
+	font-weight:bold; color:#000000;
+}
+
+div.imagepreviewpanel {
+	display:inline-block;
+	width:142px;
+	padding:1px;
+}
+div.imagepreviewpanel img {
+	border:0px;
+	width:120px; height:80px;
+	background-color:#888888;
+}
+div.imagepreviewpanel input {
+	width:66px; height:23px;
+	border:0;
+	background-color:#ffffff;
+}
+div.imagepreviewpanel button {
+	width:48px; height:20px;
+	border:1px solid #bbb;
+	padding:1px; margin:1px;
+	vertical-align:top;
+	background-color:#f9f9f9; background-image:-webkit-gradient(linear,0 0,0 60%,from(#f9f9f9),to(#ededed));
+	color:#000;	font-size:12px;
+}
+#mainImage {
+	width:150px; height:100px;
+}
+#mapImage {
+	width:300px; height:150px;
+}

@@ -1,0 +1,110 @@
+@import url("admin_base.css");
+@import url("admin_layout.css");
+
+/* in listwrap 
+table.listwrap th, table.listwrap td {
+	border: 1px solid #aaaaaa;
+	padding: 3px 16px;
+}
+*/
+table.listwrap{
+	width:100%; 
+	border-bottom:1px solid #9d9d9d;
+}
+
+table.listwrap tr{
+border-top:1px solid #d3d3d3;
+}
+
+table.listwrap thead tr:first-child, table.listwrap tfoot tr:first-child, table.listwrap tbody tr:first-child{
+	border-top:1px solid #9d9d9d;
+}
+table.listwrap tbody tr.nth td		{background-color:#fffffc;}
+table.listwrap tfoot tr th,
+table.listwrap tfoot tr td			{background-color:#f7f7f7; color:#000;}
+table.listwrap th						{padding:6px 0 4px 0; border-right:1px solid #d3d3d3; background-color:#e7e9ea; color:#333;}
+table.listwrap td						{padding:6px 5px 4px 5px; border-right:1px solid #d3d3d3; color:#555; text-align:center;}
+table.listwrap td.title					{padding:6px 5px 4px 5px; border-right:1px solid #d3d3d3; color:#555; text-align:left;}
+table.listwrap .las					{border-bottom:1px solid #9d9d9d;}
+table.listwrap tr th:last-child,
+table.listwrap tr td:last-child,
+table.listwrap .rlas					{border-right:none;}
+table.listwrap .con					{text-align:left; padding:5px 5px 5px 10px;}
+table.listwrap tr.sub td				{color:#999;}
+
+div.filterwrap {
+	width:100%;
+	margin: 8px; padding:0;
+	vertical-align: top;
+}
+div.filterwrap table {
+	width:100%;
+	 border-bottom:1px solid #9d9d9d;
+}
+
+div.filterwrap th {
+	padding:5px 0 5px 15px; 
+	background-color:#e7e9ea; 
+	color:#333;
+	border-right:1px solid #d3d3d3;
+}
+
+div.filterwrap tr:first-child {
+	border-top:1px solid #9d9d9d;
+}
+
+div.filterwrap tr {
+	border-top:1px solid #d3d3d3;
+}
+
+div.filterwrap input, div.filterwrap select {
+	vertical-align: top;
+	margin-top: 1px;
+	margin-left: 6px
+}
+
+div.filterwrap div.buttonbox {
+	margin:6px 25px;
+	text-align: center; vertical-align:middle;
+}
+
+div.filterwrap th {
+	text-align: left;
+}
+
+div.filterwrap input.email {
+	width: 250px;
+}
+
+div.filterwrap input.date {
+	width: 78px;
+}
+
+div.listinform {text-align:left; margin:5px 10px; letter-spacing:0;}
+div.listinform span	{float:left; border-left:1px sospand #ccc;}
+div.listinform span strong {color:#de1a22;}
+
+div.listbuttons {text-align:right; margin:5px 2px;}
+
+div.data {
+	display:none;
+}
+
+td.tal {
+	text-align: left;
+}
+
+td.number {
+	text-align: right;
+}
+
+td.tac, td.date {
+	text-align: center;
+}
+
+td.listimage {
+	height:120px;
+}
+td.listimage img {
+	width:98%;
+}

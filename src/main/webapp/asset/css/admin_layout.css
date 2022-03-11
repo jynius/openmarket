@@ -1,0 +1,113 @@
+body {
+	margin:0; padding:0;
+	background: linear-gradient(to right, #3b3b3b , #000000); /* Standard syntax */
+	background: -webkit-linear-gradient(left, #3b3b3b , #000000); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #3b3b3b, #000000); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #3b3b3b, #000000); /* For Firefox 3.6 to 15 */
+	/* background: url("/images/bg_red_01.png") repeat 30px 0; */
+	background: url("/images/bg_beige_01.png") repeat;
+}
+
+#leftpanel {
+	width: 200px; height:100%;
+	float: left;
+	/* background-color:#333333; */
+}
+
+#logo {
+	margin:13px auto 0 17px;
+	border:1px solid #888888;
+}
+
+#leftpanel h1 {
+	width:182px; height:37px;
+	margin:0 auto 0 17px;
+	text-align: center;
+	background-color:#333333;
+}
+#leftpanel h1 img {
+	margin: 10px auto;
+}
+
+/*LNB ¿µ¿ª*/
+#menuwrap {
+	width:176px;
+	margin:0px auto 0px 17px; padding:30px 2px;
+	border:1px solid #888888;
+	background-color:#fff;
+	font-weight:bold;
+}
+
+/* leftarea > lnb */
+#menuwrap ol.depth01		 {/* padding:3px 10px 0 10px; list-style-type: none; */list-style:upper-roman;}
+#menuwrap ol.depth01 li		 {margin:5px 10px 5px 32px;}
+#menuwrap ol.depth01 li.on	 {background:url(/images/lnb_arr.gif) right 12px no-repeat;}
+#menuwrap ol.depth01 li    a {color:#333333;/*  font-weight:normal; */}
+#menuwrap ol.depth01 li.on a {color:#de1a22;/*  font-weight:bold; */}
+#menuwrap ol.depth02		 {/* padding:7px 10px; border:none; background-color:#f3f3f3; list-style:square; */}
+#menuwrap ol.depth02 li		 {font-size:12px;/*  padding:1px 0; */}
+#menuwrap ol.depth02 li    a {color:#666;/*  font-weight:normal; */}
+#menuwrap ol.depth02 li.on a {color:#333;/*  font-weight:bold; */}
+
+#toppanel {
+	height:20px;
+	margin: 0px 0px 4px 202px; padding: 12px 20px;
+	font-size:14px;
+}
+#toppanel div.loginmessage {
+	display:inline-block;
+	margin: 4px; padding:0;
+	font-size:14px;
+	/* color:#ffffff; */
+}
+#toppanel span.username {
+	font-weight:bold;
+	font-size:14px;
+	/* color:#fff880; */
+}
+#toppanel button {
+	float: right;
+	margin: 4px 10px auto;
+	font-weight:bold;
+	font-size:14px;
+	/* color:#ffffff; */
+}
+
+#contentpanel {
+	margin: 6px 17px 6px 203px; padding: 20px 32px 60px 20px; border:1px solid #888888;
+	background-color: #fefefe;
+}
+
+div.headwrap {
+	height: 40px;
+	margin:0; padding: 0px 10px;
+	color: #6600000;
+}
+
+div.headwrap div.heading {
+	width:40%;
+}
+
+div.headwrap div.comment {
+	width:70%;
+	float:left;
+}
+
+div.headwrap div.heading span {
+	font-weight: bold; font-size:18px;
+}
+
+div.headwrap div.breadcrumb {
+	float:right;
+}
+
+/* contents wrap */
+table.listwrap, table.viewwrap, table.editwrap {
+	width: 100%;
+	margin: 0 6px; padding: 0;
+	border-collapse: collapse;
+}
+
+table.viewwrap, table.editwrap {
+	margin-top: 26px;
+}
